@@ -15,7 +15,7 @@ class Api::V1::MembersController < ApplicationController
         if @member
             render json: @member, status: 200
         else
-            render json: {"No record of member with id #{params[:id]}."}, status: 404
+            render json: {error: "No record of member with id #{params[:id]}"}, status: 404
         end
     end
   
@@ -34,10 +34,10 @@ class Api::V1::MembersController < ApplicationController
     # PUT /members/:id
     def update
         if @member.update(member_params)
-            render json: @member, status: ok
+            render json: @member, status: 200
         else
             render json: { error:
-            "Cannot update member record: #{@member.errors.full_messages.to_sentence}"},
+            'Cannot update member record: #{@member.errors.full_messages.to_sentence}'},
             status: 400
         end
     end

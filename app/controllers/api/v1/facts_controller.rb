@@ -14,9 +14,9 @@ class Api::V1::FactsController < ApplicationController
     # GET /members/:member_id/facts/:id
     def show
         if @fact
-            render json: @fact, status: ok
+            render json: @fact, status: 200
         else
-            render json: {"This fact was not found"}, status: 404
+            render json: {message: "This fact was not found"}, status: 404
         end
     end
   
@@ -25,7 +25,7 @@ class Api::V1::FactsController < ApplicationController
         @member = Member.find(params[:member_id])
         @fact = @member.facts.new(fact_params)
         if @fact.save
-            render json: @fact, status: ok
+            render json: @fact, status: 200
         else
             render json: { error: 
             "The fact entry could not be created. #{@fact.errors.full_messages.to_sentence}"},
@@ -38,9 +38,9 @@ class Api::V1::FactsController < ApplicationController
         # your code goes here
         @fact = Fact.find(params[:id])
         if @fact.update(fact_params)
-            render json: @fact, status: ok
+            render json: @fact, status: 200
         else
-            render json: { error: "Cannot update: #{@fact.errors.full_messages.to_sentence}" },
+            render json: { error: 'Cannot update: #{@fact.errors.full_messages.to_sentence}'},
             status: 400
         end
     end
@@ -48,17 +48,17 @@ class Api::V1::FactsController < ApplicationController
     # DELETE /members/:member_id/facts/:id
     def destroy
         @fact.destroy
-        render json: {"Fact deleted"}, status: ok
+        render json: {message: 'Fact deleted'}, status: 200
     end
   
     private
   
     def fact_params
-      params.require(:fact).permit(:fact_text, :likes)
+        params.require(:fact).permit(:fact_text, :likes)
     end
   
     def set_fact
-      @fact = Fact.find(params[:id])
+        @fact = Fact.find(params[:id])
     end
   
 end
