@@ -1,0 +1,17 @@
+HTTP/1.1 201 Created
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Access-Control-Expose-Headers: authorization
+Content-Type: application/json; charset=utf-8
+Vary: Accept, Origin
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjc1Nzg0MjExLCJleHAiOjE2NzU3ODc4MTEsImp0aSI6IjFjOWFiZTU0LTdmMWYtNDhjZS1hM2MzLWMxNWI0NzA3NGNmNyJ9.EEIdniOktZrGoNpEWiZvanNFtTIVcKJ6gFSBN_Fj-68
+ETag: W/"36cb9f6def08029b9c6bff3c14a98017"
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: b0f3399e-74b7-4fb0-af7b-d5f6a63ee6fe
+X-Runtime: 0.429748
+Transfer-Encoding: chunked
+
