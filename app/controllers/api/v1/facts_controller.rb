@@ -25,7 +25,7 @@ class Api::V1::FactsController < ApplicationController
         @member = Member.find(params[:member_id])
         @fact = @member.facts.new(fact_params)
         if @fact.save
-            render json: @fact, status: 200
+            render json: @fact, status: 201
         else
             render json: { error: 
             "The fact entry could not be created. #{@fact.errors.full_messages.to_sentence}"},
